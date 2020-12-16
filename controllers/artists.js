@@ -23,5 +23,17 @@ router.get("/", (req,res) => {
     res.send("Index");
 })
 
+/* New */
+
+router.get("/new", (req, res) => {
+    res.send("New");
+})
+
+/* Show */
+
+router.post("/", (req, res) => {
+    res.send({id: req.params.id})
+});
+
 /* Export router  */
 module.exports = router;

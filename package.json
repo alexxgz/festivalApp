@@ -1,0 +1,15 @@
+{
+  "name": "projectone",
+  "version": "1.0.0",
+  "description": "Alex and Gabe's First Group Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/alexgz/projectOne.git"
+  },
+  "author": "Alex & Gabe",
+  "license": "MIT"
+}

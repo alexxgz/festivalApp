@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage List</title>
+</head>
+<body>
+    <h1>Stage List</h1>
+
+    <% stages.forEach(stage => { %> 
+        <a href="/stages/<%= stage._id %>">
+            <%= stage.name %>
+        </a>
+   <% }) %>
+</body>
+</html>

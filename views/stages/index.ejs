@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stage List</title>
+    <title>The Stages</title>
 </head>
-<body>
-    <h1>Stage List</h1>
 
-    <% stages.forEach(stage => { %> 
-        <a href="/stages/<%= stage._id %>">
-            <%= stage.name %>
-        </a>
-   <% }) %>
+<body>
+    <header>Find your stage</header>
+
+    <section>
+        <p>
+        <ul>
+            <% stages.forEach(stage=> { %>
+                <li>
+                    <a href="/stages/<%= stage._id %>">
+                        <%= stage.name %>
+                    </a>
+                </li>
+                <% }) %>
+        </ul>
+        </p>
+    </section>
 </body>
+
 </html>

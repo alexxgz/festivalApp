@@ -20,20 +20,44 @@ const db = require("../models")
 /* Index */
 
 router.get("/", (req,res) => {
-    res.send("Index");
-})
+    db.Stage.find({}, () => {
+        if(err) return res.send(err);
+
+        const context = {
+            stages: foundStages,
+        };
+
+        res.render("/stages/index", context);
+    });
+});
 
 /* New */
 
 router.get("/new", (req, res) => {
-    res.send("New");
-})
+    db.Stage.find({}, (err, foundStages) => {
+        if(err) return res.send(err);
+        const context = {
+            stages: foundStages,
+        };
+        res.render("stages/new", context);
+    });
+});
+
 
 /* Show */
 
-router.post("/", (req, res) => {
-    res.send({id: req.params.id})
+router.get("/", (req, res) => {
+    db.Stage
+    .findById(req.param.id)
+    .populate("author")
+    .exec((err, foundStage) => {
+        if(err) return res.send(err);
+        const context = {stage: foundStage};
+        res.render("stages/show", context);
+    })
 });
+
+
 
 /* Export router  */
 module.exports = router;

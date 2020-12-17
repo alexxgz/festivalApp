@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Artist</title>
+</head>
+
+<body>
+    <a href="/">Home</a>
+    <a href="/artists">Back to all Artists</a>
+
+    <h1> Meet the Artist </h1>
+
+    <h2>
+        Name: <%= artist.djName %>
+    </h2>
+
+    <h4>
+        Genre: <%=artist.genre%>
+    </h4>
+
+    <h3>
+        <% if (artist.touring) { %>
+            Currently touring around the world
+            <% } else { %>
+                Currently working on a new albulm
+                <%} %>
+    </h3>
+
+    <div>
+        <form action="/artists/<%= artist._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete">
+        </form>
+
+        <a href="/artists/<%= artist._id %>/edit">EDIT</a>
+    </div>
+
+</body>
+
+</html>

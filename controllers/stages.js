@@ -43,9 +43,10 @@ router.get("/new", (req, res) => {
     });
 });
 
+
 /* Show */
 
-router.post("/", (req, res) => {
+router.get("/", (req, res) => {
     db.Stage
     .findById(req.param.id)
     .populate("author")
@@ -55,6 +56,8 @@ router.post("/", (req, res) => {
         res.render("stages/show", context);
     })
 });
+
+
 
 /* Export router  */
 module.exports = router;

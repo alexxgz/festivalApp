@@ -44,6 +44,32 @@ router.get("/new", (req, res) => {
     })
 })
 
+/* Request */
+router.get("/requests", (req, res) => {
+    db.Artist.find({}, (err,foundArtists) => {
+        if(err) return res.send(err);
+
+        const context = {
+            artist: foundArtists
+        };
+        res.render("artists/requests", context)
+    })
+})
+
+/* Requested (basically another index route) */
+
+router.get("/", (req,res) => {
+    db.Artist.find({}, (err, foundArtists) => {
+        if(err) return res.send(err);
+
+        const context = {
+            artists: foundArtists,
+        };
+
+        res.render("artists/requested", context)
+    })
+})
+
 /* Show */
 
 router.get("/:id", (req, res) => {

@@ -56,8 +56,6 @@ router.get("/requests", (req, res) => {
     })
 })
 
-
-
 /* Show */
 
 router.get("/:id", (req, res) => {

@@ -22,20 +22,14 @@
     </h4>
 
     <h3>
-        <% if (artist.touring) { %>
-            Currently touring around the world
-            <% } else { %>
-                Currently working on a new albulm
-                <%} %>
+        Top hits: <%= artist.topHits %>
     </h3>
 
-    <div>
-        <form action="/artists/<%= artist._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete">
-        </form>
+    <h4>
+        Stage/stages:
+        <%= artist.stage %>
+    </h4>
 
-        <a href="/artists/<%= artist._id %>/edit">EDIT</a>
-    </div>
 
 </body>
 

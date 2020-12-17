@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2020-12-17T21:43:33.751Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.0 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" version="13.10.0" etag="WTXKs44SlMPBW-o6T9mX" type="embed">
+<mxfile host="65bd71144e" modified="2020-12-17T22:02:15.551Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.0 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" version="13.10.0" etag="M7vKLOR8rphPVx7QkhGq" type="embed">
     <diagram id="dDj-aXQRQg6ryRTPpy3I" name="Page-1">
         <mxGraphModel dx="927" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
@@ -25,7 +25,7 @@
                 <mxCell id="8" value="PK | days |  String" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" parent="6" vertex="1">
                     <mxGeometry y="56" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="artist&#10;&#10;PK | setTimes" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" parent="6" vertex="1">
+                <mxCell id="9" value="artist | String &#10;&#10;PK | setTimes" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" parent="6" vertex="1">
                     <mxGeometry y="86" width="160" height="114" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;entryX=-0.019;entryY=0.093;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="3" edge="1">

@@ -4,19 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Artist</title>
+    <title>Requested Artist</title>
 </head>
 
 <body>
     <header>
-        <h1>Learn more about the artists </h1>
+        <a href="/artists">Back to All Artist</a>
+        <a href="/">Back Home</a>
     </header>
+
+    <h1>All Requested Artist</h1>
 
     <section>
         <p>
         <ul>
             <% artists.forEach(artist=> { %>
-                <a href="/artists/<%= artist._id %>">
+                <a href="/artists/requests<%= artist._id %>">
                     <li>
                         <%= artist.djName %>
                     </li>
@@ -24,12 +27,11 @@
                 <% }); %>
         </ul>
         </p>
+
     </section>
 
-    <section>
-        <a href="artists/requests">See which Artists have been requested</a>
-        <a href="/artists/new">Request More Artist</a>
-    </section>
+    <a href="/artists/edit">Edit Artists</a>
+
 </body>
 
 </html>

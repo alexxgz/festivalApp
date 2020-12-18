@@ -21,6 +21,6 @@ mongoose.connection.on("error", function (error) {
 });
 
 module.exports = {
-    Festival: require("./Stage"),
+    Stage: require("./Stage"),
     Artist: require("./Artist"),
 };

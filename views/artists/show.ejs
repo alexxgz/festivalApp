@@ -8,27 +8,33 @@
 </head>
 
 <body>
-    <a href="/">Home</a>
-    <a href="/artists">Back to all Artists</a>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/artists">Back to all Artists</a>
+    </nav>
 
-    <h1> Meet the Artist </h1>
+    <header>
+        <h1> Meet the Artist </h1>
+    </header>
 
-    <h2>
-        Name: <%= artist.djName %>
-    </h2>
+    <section>
+        <h2>
+            Name: <%= artist.djName %>
+        </h2>
 
-    <h4>
-        Genre: <%=artist.genre%>
-    </h4>
+        <h4>
+            Genre: <%=artist.genre%>
+        </h4>
 
-    <h3>
-        Top hits: <%= artist.topHits %>
-    </h3>
+        <h4>
+            Top hits: <%= artist.topHits %>
+        </h4>
 
-    <h4>
-        Stage/stages:
-        <%= artist.stage %>
-    </h4>
+        <h4>
+            Playing at:
+            <%= artist.stage %>
+        </h4>
+    </section>
 
 
 </body>

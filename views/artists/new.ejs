@@ -8,20 +8,29 @@
 </head>
 
 <body>
-    <a href="/">Home</a>
-    <a href="/artists">Back to all Artists</a>
-    <a href="/artists/requests">Requested Artist</a>
-    <h1>Request an Arist</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/artists">Back to all Artists</a>
+        <a href="/artists/requests">Requested Artist</a>
+    </nav>
+    <header>
+        <h1>Request an Arist</h1>
+    </header>
 
-    <form action="/artists/requests" method="POST">
+    <section>
+        <form action="/artists/" method="POST">
 
 
-        Name: <input type="text" name="djName" placeholder="Excision" />
-        Genre: <input type="text" name="genre" placeholder="dubstep" />
+            Name: <input type="text" name="djName" placeholder="Excision" />
+            Genre: <input type="text" name="genre" placeholder="dubstep" />
+            Top Hits: <input type="text" name="topHits" placeholder="Top Hits" />
+            Stage: <input type="text" name="stage" placeholder="What stage are they playing on?" />
 
-        <input type="submit" value="Request new Arist">
+            <input type="submit" value="Request new Arist">
 
-    </form>
+        </form>
+    </section>
+
 
 
 

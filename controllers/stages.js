@@ -19,9 +19,9 @@ const db = require("../models")
 
 /* Index */
 
-router.get("/", (req,res) => {
+router.get("/", (req, res) => {
     db.Stage.find({}, () => {
-        if(err) return res.send(err);
+        if (err) return res.send(err);
 
         const context = {
             stages: foundStages,
@@ -35,7 +35,7 @@ router.get("/", (req,res) => {
 
 router.get("/new", (req, res) => {
     db.Stage.find({}, (err, foundStages) => {
-        if(err) return res.send(err);
+        if (err) return res.send(err);
         const context = {
             stages: foundStages,
         };
@@ -48,13 +48,13 @@ router.get("/new", (req, res) => {
 
 router.get("/", (req, res) => {
     db.Stage
-    .findById(req.param.id)
-    .populate("author")
-    .exec((err, foundStage) => {
-        if(err) return res.send(err);
-        const context = {stage: foundStage};
-        res.render("stages/show", context);
-    })
+        .findById(req.param.id)
+        .populate("artists")
+        .exec((err, foundStage) => {
+            if (err) return res.send(err);
+            const context = { stage: foundStage };
+            res.render("stages/show", context);
+        })
 });
 
 

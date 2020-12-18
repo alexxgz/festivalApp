@@ -8,25 +8,29 @@
 </head>
 
 <body>
-    <a href="/">Home</a>
-    <a href="/artists">Artists</a>
-    <a href="/aritsts/requests">Requested Artists</a>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/artists">Artists</a>
+        <a href="/aritsts/requests">Requested Artists</a>
+    </nav>
+    <header>
+        <h1>
+            Editing <%= artist.djName %>
+        </h1>
+    </header>
 
-    <h1>
-        Editing <%= artist.djName %>
-    </h1>
+    <section>
+        <form action="/artists/requests<%= artist._id %>?_method=PUT" method="POST">
 
+            Name: <input type="text" name="djName" placeholder="<%= artist.djName %> ">
+            </br>
+            Genre: <input type="text" name="genre" placeholder="<%= artist.genre %> ">
+            </br>
+            Top Hits: <input type="text" name="topHits" placeholder="<%= artist.topHits %> ">
 
-    <form action="/artists/requests<%= artist._id %>?_method=PUT" method="POST">
-
-        Name: <input type="text" name="djName" placeholder="<%= artist.djName %> ">
-        </br>
-        Genre: <input type="text" name="genre" placeholder="<%= artist.genre %> ">
-        </br>
-        Top Hits: <input type="text" name="topHits" placeholder="<%= artist.topHits %> ">
-
-        <input type="submit" value="Update <%= artist.djName %>">
-    </form>
+            <input type="submit" value="Update <%= artist.djName %>">
+        </form>
+    </section>
 </body>
 
 </html>

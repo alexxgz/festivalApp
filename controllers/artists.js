@@ -20,11 +20,11 @@ const db = require("../models")
 /* Index */
 
 router.get("/", (req,res) => {
-    db.Artist.find({}, (err, foundArtists) => {
+    db.Artist.find({}, (err, allArtists) => {
         if(err) return res.send(err);
 
         const context = {
-            artists: foundArtists,
+            artists: allArtists,
         };
 
         res.render("artists/index", context)

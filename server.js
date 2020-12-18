@@ -39,6 +39,12 @@ app.get("/", function (req, res) {
     res.render("home");
 });
 
+// artist controller
+app.use("/artists", controllers.artists);
+
+// stage controller
+app.use("/stages", controllers.stages);
+
 
 //404 error
 app.get(function (request, response) {

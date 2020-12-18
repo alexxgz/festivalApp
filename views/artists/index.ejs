@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Artist</title>
+</head>
+
+<body>
+    <header>
+        <h1>Learn more about the artists </h1>
+    </header>
+
+    <section>
+        <p>
+        <ul>
+            <% artists.forEach(artist=> { %>
+                <a href="/artists/<%= artist._id %>">
+                    <li>
+                        <%= artist.djName %>
+                    </li>
+                </a>
+                <% }); %>
+        </ul>
+        </p>
+    </section>
+
+    <section>
+        <a href="artists/requests">See which Artists have been requested</a>
+        <a href="/artists/new">Request More Artist</a>
+    </section>
+</body>
+
+</html>

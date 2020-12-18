@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Artist</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/artists">Artists</a>
+        <a href="/aritsts/requests">Requested Artists</a>
+    </nav>
+    <header>
+        <h1>
+            Editing <%= artists.djName %>
+        </h1>
+    </header>
+
+    <section>
+        <form action="/artists/<%= artists._id %>?_method=PUT" method="POST">
+
+            Name: <input type="text" name="djName" placeholder="<%= artists.djName %> ">
+            </br>
+            Genre: <input type="text" name="genre" placeholder="<%= artists.genre %> ">
+            </br>
+            Top Hits: <input type="text" name="topHits" placeholder="<%= artists.topHits %> ">
+
+            <input type="submit" value="Update <%= artists.djName %>">
+        </form>
+    </section>
+</body>
+
+</html>

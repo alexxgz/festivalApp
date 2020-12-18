@@ -12,6 +12,12 @@ const app = express();
 const PORT = 4000;
 app.set("view engine", "ejs");
 
+//Logger for terminal
+app.use(function (request, resonse, next) {
+    console.log(request.url, request.method);
+    next();
+});
+
 
 //Middleware
 
@@ -32,6 +38,12 @@ app.use(methodOverride("_method"));
 app.get("/", function (req, res) {
     res.render("home");
 });
+
+// artist controller
+app.use("/artists", controllers.artists);
+
+// stage controller
+app.use("/stages", controllers.stages);
 
 
 //404 error

@@ -1,15 +1,19 @@
+
 const mongoose = require("mongoose");
 
-const stageSchema = new mongoose.Schema(
-    {
-        stageName: { type: String, required: true, unique: true },
-        dates: { type: String, required: true },
-        artistsPlaying: { type: String, required: true },
-        setTime: { type: Date },
-    },
-    { timestamps: true }
-);
+module.exports = [
+{
+    name: "Kinetic Garden",
+    dates: ["1", "2", "3"],
+    artists: [{ type: mongoose.Schema.Types.ObjectId, ref: "Artist" }],
+    setTimes: ["12PM", "1PM", "2PM", "3PM"]
+},
 
-const Stage = mongoose.model("Stage", stageSchema);
+{
+    name: "Neon Field",
+    dates: ["1", "2", "3"],
+    artists: [{ type: mongoose.Schema.Types.ObjectId, ref: "Artist" }],
+    setTimes: ["5PM", "6PM", "7PM", "8PM"]
+}
 
-module.exports = Stage;
+]

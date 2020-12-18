@@ -17,13 +17,13 @@
     <section>
         <p>
         <ul>
-            <% stages.forEach( stage=> { %>
-                <li>
-                    <a href="/stages/<%= stages._id %>">
+            <% stages.forEach(stage=> { %>
+                <a href="/stages/<%= stages._id %>">
+                    <li>
                         <%= stages.name %>
-                    </a>
-                </li>
-                <% }) %>
+                    </li>
+                </a>
+                <% }); %>
         </ul>
         </p>
     </section>

@@ -20,9 +20,15 @@ const db = require("../models")
 /* Index */
 
 router.get("/", (req,res) => {
-    i = req.params.index
-    const context = {stages: db.Stage[i]}
-    res.render("stages/index", context);
+    db.Stage.find({}, (err, allStages) => {
+        if(err) return res.send(err);
+
+        const context = {
+            stages: allStages,
+        };
+        console.log(allStages)
+        res.render("stages/index", context)
+    })
 })
 
 /* Show */

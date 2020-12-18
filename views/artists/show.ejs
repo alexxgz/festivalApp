@@ -19,21 +19,24 @@
 
     <section>
         <h2>
-            Name: <%= artist.djName %>
+            Name: <%= artists.djName %>
         </h2>
 
         <h4>
-            Genre: <%=artist.genre%>
+            Genre: <%=artists.genre%>
         </h4>
 
         <h4>
-            Top hits: <%= artist.topHits %>
+            Top hits: <%= artists.topHits %>
         </h4>
 
         <h4>
             Playing at:
-            <%= artist.stage %>
+            <%= artists.stage %>
         </h4>
+    </section>
+    <section>
+        <a href="/artists/<%= artists._id %>/edit">Edit Artists</a>
     </section>
 
     <section>

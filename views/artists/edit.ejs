@@ -15,22 +15,26 @@
     </nav>
     <header>
         <h1>
-            Editing <%= artist.djName %>
+            Editing <%= artists.djName %>
         </h1>
     </header>
 
     <section>
-        <form action="/artists/requests<%= artist._id %>?_method=PUT" method="POST">
+        <form action="/artists/requests<%= artists._id %>?_method=PUT" method="POST">
 
-            Name: <input type="text" name="djName" placeholder="<%= artist.djName %> ">
+            Name: <input type="text" name="djName" placeholder="<%= artists.djName %> ">
             </br>
-            Genre: <input type="text" name="genre" placeholder="<%= artist.genre %> ">
+            Genre: <input type="text" name="genre" placeholder="<%= artists.genre %> ">
             </br>
+<<<<<<< HEAD
             Top Hits: <input type="text" name="topHits" placeholder="<%= artist.topHits %> ">
             </br>
             Playing at: <input type="text" name="stage" placeholder=" <%= artist.stage %> ">
+=======
+            Top Hits: <input type="text" name="topHits" placeholder="<%= artists.topHits %> ">
+>>>>>>> submaster
 
-            <input type="submit" value="Update <%= artist.djName %>">
+            <input type="submit" value="Update <%= artists.djName %>">
         </form>
     </section>
 </body>

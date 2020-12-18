@@ -56,12 +56,33 @@ router.get("/requests", (req, res) => {
     })
 })
 
+/* Request Show */
+router.get("/requests/:id", (req, res) => {
+    db.Artist.findById(req.params.id, (err, foundArtist) => {
+        if(err) return res.send(err);
+        const context = {artists: foundArtist};
+        res.render("artists/show", context);
+    });
+    
+    
+    /* db.Artist
+    .findById(req.params.id)
+    .populate("stages")
+    .exec((err, foundArtist) => {
+        if(err) return res.send(err);
+
+        const context = { artist: foundArtist };
+        return res.render("artists/show", context)
+    }) */
+});
+
+
 /* Show */
 
 router.get("/:id", (req, res) => {
     db.Artist.findById(req.params.id, (err, foundArtist) => {
         if(err) return res.send(err);
-        const context = {artist: foundArtist};
+        const context = {artists: foundArtist};
         res.render("artists/show", context);
     });
     
@@ -83,17 +104,17 @@ router.post("/", (req, res) => {
     db.Artist.create(req.body, (err, createdArtist) => {
         if(err) return res.send(err);
 
-        return res.redirect("/artists/requests")
+        return res.redirect("/artists/")
     });
 });
 
 /* Edit */
 
-router.get(":/id/edit", (req, res) => {
+router.get("/:id/edit", (req, res) => {
     db.Artist.findById(req.params.id, (err, foundArtist) => {
         if(err) return res.send(err);
 
-        const context = {artist: foundArtist};
+        const context = {artists: foundArtist};
         return res.render("artists/edit", context)
     })
 })

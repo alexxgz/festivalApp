@@ -20,72 +20,17 @@ const db = require("../models")
 /* Index */
 
 router.get("/", (req,res) => {
-    db.Stage.find({}, (err, allStages) => {
-        if(err) return res.send(err);
-
-        const context = {
-            stages: allStages,
-        };
-
-        res.render("stages/index", context)
-    })
+    i = req.params.index
+    const context = {stages: db.Stage[i]}
+    res.render("stages/index", context);
 })
-
-/* New */
-
-router.get("/new", (req, res) => {
-    db.Stage.find({}, (err, foundStages) => {
-        if(err) return res.send(err);
-
-        const context = {
-            stages: foundStages,
-        };
-        res.render("stages/new", context)
-    })
-})
-
-/* Request */
-router.get("/requests", (req, res) => {
-    db.Stage.find({}, (err,foundStages) => {
-        if(err) return res.send(err);
-
-        const context = {
-            stages: foundStages
-        };
-        res.render("stages/requests", context)
-    })
-})
-
-/* Request Show */
-router.get("/requests/:id", (req, res) => {
-    db.Stage.findById(req.params.id, (err, foundStage) => {
-        if(err) return res.send(err);
-        const context = {stages: foundStage};
-        res.render("stages/show", context);
-    });
-    
-    
-    db.Artist
-    .findById(req.params.id)
-    .populate("stages")
-    .exec((err, foundArtist) => {
-        if(err) return res.send(err);
-
-        const context = { artist: foundArtist };
-        return res.render("artists/show", context)
-    })
-});
-
 
 /* Show */
 
 router.get("/:id", (req, res) => {
-    db.Stage.findById(req.params.id, (err, foundStage) => {
-        if(err) return res.send(err);
-        const context = {stages: foundStage};
-        res.render("stages/show", context);
-    });
-    
+    const context = {stages: db.Stage};
+    res.render("stages/show", context);
+   
     
     /* db.Artist
     .findById(req.params.id)
@@ -93,59 +38,12 @@ router.get("/:id", (req, res) => {
     .exec((err, foundArtist) => {
         if(err) return res.send(err);
 
-        const context = { artist: foundArtist };
+        const context = { artists: foundArtist };
         return res.render("artists/show", context)
     }) */
 });
 
-/* Create */
 
-router.post("/", (req, res) => {
-    db.Artist.create(req.body, (err, createdArtist) => {
-        if(err) return res.send(err);
-
-        return res.redirect("/artists")
-    });
-});
-
-/* Edit */
-
-router.get("/:id/edit", (req, res) => {
-    db.Artist.findById(req.params.id, (err, foundArtist) => {
-        if(err) return res.send(err);
-
-        const context = {artists: foundArtist};
-        return res.render("artists/edit", context)
-    })
-})
-
-/* Update */
-router.put("/:id", (req, res) => {
-	db.Artist.findByIdAndUpdate(
-		req.params.id,
-		{
-			$set: {
-				...req.body,
-			},
-		},
-		{ new: true },
-		function (err, updatedArtist) {
-			if (err) return res.send(err);
-
-			return res.redirect(`/artists/${updatedArtist._id}`);
-		}
-	);
-});
-
-/* Delete */
-
-router.delete("/:id", (req, res) => {
-	db.Artist.findByIdAndDelete(req.params.id, (err, deletedArtist) => {
-		if (err) return res.send(err);
-
-        return res.redirect("/artists")
-	});
-});
 
 /* Export router  */
 module.exports = router;

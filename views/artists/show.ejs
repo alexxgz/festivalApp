@@ -37,6 +37,9 @@
     </section>
     <section>
         <a href="/artists/<%= artists._id %>/edit">Edit Artists</a>
+        <form action="/artists/<%= artists._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete" />
+          </form>
     </section>
 
     <section>

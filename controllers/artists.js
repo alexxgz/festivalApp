@@ -56,28 +56,15 @@ router.get("/requests", (req, res) => {
     })
 })
 
-<<<<<<< HEAD
+/* Request Show */
 router.get("/requests/:id", (req, res) => {
     db.Artist.findById(req.params.id, (err, foundArtist) => {
         if (err) return res.send(err);
         const context = { artists: foundArtist };
         res.render("artists/show", context);
-    })
-
-});
-
-
-
-=======
-/* Request Show */
-router.get("/requests/:id", (req, res) => {
-    db.Artist.findById(req.params.id, (err, foundArtist) => {
-        if(err) return res.send(err);
-        const context = {artists: foundArtist};
-        res.render("artists/show", context);
     });
-    
-    
+
+
     /* db.Artist
     .findById(req.params.id)
     .populate("stages")
@@ -90,18 +77,12 @@ router.get("/requests/:id", (req, res) => {
 });
 
 
->>>>>>> submaster
 /* Show */
 
 router.get("/:id", (req, res) => {
     db.Artist.findById(req.params.id, (err, foundArtist) => {
-<<<<<<< HEAD
         if (err) return res.send(err);
-        const context = { artist: foundArtist };
-=======
-        if(err) return res.send(err);
-        const context = {artists: foundArtist};
->>>>>>> submaster
+        const context = { artists: foundArtist };
         res.render("artists/show", context);
     });
 
@@ -123,7 +104,7 @@ router.post("/", (req, res) => {
     db.Artist.create(req.body, (err, createdArtist) => {
         if (err) return res.send(err);
 
-        return res.redirect("/artists/")
+        return res.redirect("/artists")
     });
 });
 
@@ -133,42 +114,38 @@ router.get("/:id/edit", (req, res) => {
     db.Artist.findById(req.params.id, (err, foundArtist) => {
         if (err) return res.send(err);
 
-<<<<<<< HEAD
-        const context = { artist: foundArtist };
-=======
-        const context = {artists: foundArtist};
->>>>>>> submaster
+        const context = { artists: foundArtist };
         return res.render("artists/edit", context)
     })
 })
 
 /* Update */
 router.put("/:id", (req, res) => {
-    db.Author.findByIdAndUpdate(
+    db.Artist.findByIdAndUpdate(
         req.params.id,
         {
             $set: {
-                ...req.body
-            }
+                ...req.body,
+            },
         },
         { new: true },
-        (err, updatedArtist) => {
+        function (err, updatedArtist) {
             if (err) return res.send(err);
 
-            return res.redirect(`/artists/${updatedArtist._id}`)
+            return res.redirect(`/artists/${updatedArtist._id}`);
         }
     );
 });
 
 /* Delete */
 
-router.delete(":/id", (req, res) => {
-    db.Author.findByIdAndDelete(req.params.id, (err, deletedArtist) => {
+router.delete("/:id", (req, res) => {
+    db.Artist.findByIdAndDelete(req.params.id, (err, deletedArtist) => {
         if (err) return res.send(err);
 
-        return res.redirect("/artists");
-    })
-})
+        return res.redirect("/artists")
+    });
+});
 
 /* Export router  */
 module.exports = router;

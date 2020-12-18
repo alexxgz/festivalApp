@@ -20,7 +20,7 @@
         <p>
         <ul>
             <% artists.forEach(artist=> { %>
-                <a href="/artists/requests<%= artist._id %>">
+                <a href="/artists/requests/<%= artist._id %>">
                     <li>
                         <%= artist.djName %>
                     </li>

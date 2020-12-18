@@ -139,13 +139,13 @@ router.put("/:id", (req, res) => {
 
 /* Delete */
 
-router.delete(":/id", (req,res) => {
-    db.Author.findByIdAndDelete(req.params.id, (err, deletedArtist) => {
-        if(err) return res.send(err);
+router.delete("/:id", (req, res) => {
+	db.Artist.findByIdAndDelete(req.params.id, (err, deletedArtist) => {
+		if (err) return res.send(err);
 
-        return res.redirect("/artists");
-    })
-})
+        return res.redirect("/artists")
+	});
+});
 
 /* Export router  */
 module.exports = router;

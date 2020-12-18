@@ -50,7 +50,7 @@ router.get("/requests", (req, res) => {
         if(err) return res.send(err);
 
         const context = {
-            artist: foundArtists
+            artists: foundArtists
         };
         res.render("artists/requests", context)
     })
@@ -62,7 +62,7 @@ router.get("/:id", (req, res) => {
     db.Artist.findById(req.params.id, (err, foundArtist) => {
         if(err) return res.send(err);
         const context = {artist: foundArtist};
-        res.render("articles/show", context);
+        res.render("artists/show", context);
     });
     
     
@@ -83,7 +83,7 @@ router.post("/", (req, res) => {
     db.Artist.create(req.body, (err, createdArtist) => {
         if(err) return res.send(err);
 
-        return res.redirect("/artists")
+        return res.redirect("/artists/requests")
     });
 });
 

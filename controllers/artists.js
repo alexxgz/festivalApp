@@ -104,7 +104,7 @@ router.post("/", (req, res) => {
     db.Artist.create(req.body, (err, createdArtist) => {
         if(err) return res.send(err);
 
-        return res.redirect("/artists/")
+        return res.redirect("/artists")
     });
 });
 
@@ -120,32 +120,32 @@ router.get("/:id/edit", (req, res) => {
 })
 
 /* Update */
-router.put("/:id", (req,res) => {
-    db.Author.findByIdAndUpdate(
-        req.params.id,
-        {
-            $set: {
-                ...req.body
-            }
-        },
-        {new: true},
-        (err, updatedArtist) => {
-            if(err) return res.send(err);
+router.put("/:id", (req, res) => {
+	db.Artist.findByIdAndUpdate(
+		req.params.id,
+		{
+			$set: {
+				...req.body,
+			},
+		},
+		{ new: true },
+		function (err, updatedArtist) {
+			if (err) return res.send(err);
 
-            return res.redirect(`/artists/${updatedArtist._id}`)
-        }
-    );
+			return res.redirect(`/artists/${updatedArtist._id}`);
+		}
+	);
 });
 
 /* Delete */
 
-router.delete(":/id", (req,res) => {
-    db.Author.findByIdAndDelete(req.params.id, (err, deletedArtist) => {
-        if(err) return res.send(err);
+router.delete("/:id", (req, res) => {
+	db.Artist.findByIdAndDelete(req.params.id, (err, deletedArtist) => {
+		if (err) return res.send(err);
 
-        return res.redirect("/artists");
-    })
-})
+        return res.redirect("/artists")
+	});
+});
 
 /* Export router  */
 module.exports = router;

@@ -1,6 +1,7 @@
 //External Modules
 const express = require("express");
 const methodOverride = require("method-override");
+const path = require("path");
 
 //Internal Modules
 const controllers = require("./controllers");
@@ -11,6 +12,8 @@ const app = express();
 //Configuration
 const PORT = 4000;
 app.set("view engine", "ejs");
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Logger for terminal
 app.use(function (request, resonse, next) {

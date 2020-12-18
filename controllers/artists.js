@@ -126,7 +126,7 @@ router.put("/:id", (req,res) => {
         {
             $set: {
                 ...req.body
-            }
+            },
         },
         {new: true},
         (err, updatedArtist) => {

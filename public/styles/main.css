@@ -4,25 +4,64 @@ body {
     height: 100%;
      
 
-    /* Background image is centered vertically and horizontally at all times */
     background-position: center center;
 
-    /* Background image doesn't tile */
+    
     background-repeat: no-repeat;
 
-    /* Background image is fixed in the viewport so that it doesn't move when 
-    the content's height is greater than the image's height */
+    
     background-attachment: fixed;
 
-    /* This is what makes the background image rescale based
-    on the container's size */
+   
     background-size: cover;
 
-    /* Set a background color that will be displayed
-    while the background image is loading */
+   
     background-color: rgb(210, 203, 16);
     overflow: hidden;
 
-    /* Location of the image */
-    background-image:url('images/edc.jpg') ;
+   
+    background-image:url('/images/edc.jpg');
+}
+
+header {
+    text-align: center;
+}
+h1 {
+    background-color: rgba(255, 235, 205, .7);
+}
+nav {
+    text-align: center;
+    background-color: blanchedalmond;
+    
+}
+article {
+    text-align: center;
+    font-size: xx-large;
+    margin: 75px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 235, 205, .7);
+    
+}
+
+.artistShow {
+    background-image: url('/images/djView.jpg');
+}
+
+section {
+    background-color: rgba(255, 235, 205, .7);
+}
+
+footer {
+    background-color: rgba(255, 255, 255, .7);
 } 
+.subscribeHome {
+    background-color: rgba(0,0,0,.7); 
+    text-align: center;
+}
+.submitButton:hover {
+    background-color: rgba(255, 255, 255, .7);
+}
+
+a {
+    color: black;
+}

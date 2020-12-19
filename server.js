@@ -13,7 +13,6 @@ const app = express();
 const PORT = 4000;
 app.set("view engine", "ejs");
 
-app.use(express.static(path.join(__dirname, 'public')));
 
 //Logger for terminal
 app.use(function (request, resonse, next) {

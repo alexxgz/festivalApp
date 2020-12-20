@@ -1,5 +1,6 @@
 /* Require express */
 const express = require("express");
+const { stages } = require(".");
 
 /* Set up router */
 const router = express.Router();
@@ -20,16 +21,17 @@ const db = require("../models")
 /* Index */
 
 router.get("/", (req,res) => {
-    db.Stage.find({}, (err, allStages) => {
-        if(err) return res.send(err);
-
-        const context = {
-            stages: allStages,
-        };
-        console.log(allStages)
-        res.render("stages/index", context)
-    })
-})
+    db.Stage.find({}, (err, allStages) =>{
+  
+      if(err) return res.send(err);
+  
+      const context = {stages: allStages};
+      console.log(allStages)
+      return res.render("stages/index", context);
+  
+    });
+  
+  });
 
 /* Show */
 

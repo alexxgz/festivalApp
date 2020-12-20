@@ -4,35 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <title>EDC</title>
 </head>
 
 <body>
     <header>
-        <h1>Welcome to Fest.y</h1>
+        <h1>Welcome to Fest. y</h1>
     </header>
     <nav>
-        <a href="/stages">Find a stage</a>
-        <a href="/artists">Meet the Artist</a>
+        <a class="stagesLink" href="/stages">Find a stage</a>
+        <a class="artistLink" href="/artists">Meet the Artist</a>
+        <a class="merchLink" href="??????????">Merch</a>
     </nav>
-    <article>
+    <article class="homeBio">
         <p>
             Under the Electric Sky, we come together to celebrate life, love, art, and music. From the stages and the
             sound to the pyrotechnics and the performers, so many unique elements go into bringing this world to life.
-            We invite you to wander, explore, interact, and connect. Imagination and positive energy are the currency of
-            this place.
+            We invite you to wander and explore go deeper into the rabbit hole then ever before.
         </p>
     </article>
-</body>
+    <section class="homePictures">
+        <img class="homePicOne" src='/images/mainStage.jpg' alt="Main stage">
+        <img class="homePicTwo" src='/images/stageTwo.jpeg' alt="Second Stage">
+        <img src="" alt="">
+    </section>
 
-<footer class="subscribeHome">
-    <form action="????????" method='POST'>
-        <input type="email" name="email" placeholder="Email" />
-        <input class="submitButton" type="submit" value="Subscribe">
-    </form>
-</footer>
+
+
+    <div class="homeTourDates">
+        <h2 class="tourDates">TOUR DATES</h2>
+
+        <div class="dayOne">JAN. 2ND, 2021 - SAN DIEGO, CA - <button class="buyButtons">Buy Tickets</button> </div>
+
+
+        <div class="dayTwo">FEB. 6TH, 2021 - SAN FRANSISCO, CA - <button class="buyButtons">Buy Tickets</button></div>
+
+
+        <div class="dayThree">Mar. 13TH, 2021 - SEATTLE, WA - <button class="buyButtons">Buy Tickets</button></div>
+
+
+        <div class="dayFour">APR 24TH, 2021 - LAS VEGAS, NV - <button class="buyButtons">Buy Tickets</button></div>
+
+    </div>
+
+
+    <footer class="subscribeHome">
+        <p class="subscribeInfo">Stay up to date with the latest news about Fest.y</p>
+        <form action="????????" method='POST'>
+            <input class="inputEmail" type="email" name="email" placeholder="Email" />
+            <input class="subscribeButton" type="submit" value="Subscribe">
+        </form>
+    </footer>
+</body>
 
 </html>

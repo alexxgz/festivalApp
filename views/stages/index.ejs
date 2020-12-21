@@ -29,13 +29,13 @@
             optio quo ducimus vel nostrum autem, nam qui minus maiores. Molestiae accusantium maiores quibusdam adipisci
             porro?</p>
         <ul>
-            <% stages.forEach(stage => { %>
-                <a href="/stages/<%= stages._id %>">
-                    <li>
-                        <%= stages.stageName %>
-                    </li>
-                </a>
-                <% }); %>
+            <% stages.forEach(stage=> { %>
+                <li>
+                    <a href="/stages/<%= stage._id %>">
+                        <%= stage.stageName %>
+                    </a>
+                </li>
+                <% }) %>
         </ul>
 
     </section>

@@ -3,8 +3,7 @@ const mongoose = require("mongoose");
 const stageSchema = new mongoose.Schema(
     {
         stageName: { type: String, required: true, unique: true },
-        dates: { type: String, },
-        artistsPlaying: { type: String, },
+        artistsPlaying: { type: mongoose.Schema.Types.ObjectId, ref: "Artist" },
         setTime: { type: Date },
     },
     { timestamps: true }

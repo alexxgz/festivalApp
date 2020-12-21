@@ -1,24 +1,25 @@
 const mongoose = require("mongoose");
 
-const mongoUrl = "mongodb://localhost:27017/festivals"
+const dbUrl = "mongodb://localhost:27017/festivals"
 
-
-mongoose.connect(mongoUrl, {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false
-});
+})
+.then(function() {
+    console.log("Mongodb connected");
+})
+.catch(function(err) {
+    console.log("Mongodb error");
+    console.log(err);
+})
 
-mongoose.connection.on("connected", function () {
-    console.log("mongodb connected");
-});
 mongoose.connection.on("disconnected", function () {
     console.log("mongodb disconnected");
 });
-mongoose.connection.on("error", function (error) {
-    console.log("mongodb error!", error);
-});
+
 
 module.exports = {
     Stage: require("./Stage"),

@@ -1,7 +1,6 @@
 /* Require express */
 const express = require("express");
 
-
 /* Set up router */
 const router = express.Router();
 
@@ -22,16 +21,15 @@ const db = require("../models")
 
 router.get("/", (req, res) => {
     db.Stage.find({}, (err, allStages) => {
-
         if (err) return res.send(err);
 
-        const context = { stages: allStages };
+        const context = {
+            stages: allStages,
+        };
         console.log(allStages)
-        return res.render("stages/index", context);
-
-    });
-
-});
+        res.render("stages/index", context)
+    })
+})
 
 /* New */
 
@@ -42,7 +40,7 @@ router.get("/new", (req, res) => {
         const context = {
             stages: foundStages
         };
-        res.render("/stages/new", context)
+        res.render("stages/new", context)
     })
 })
 
@@ -56,43 +54,37 @@ router.get("/:id", (req, res) => {
     });
 
 
-    // db.Artist
-    //     .findById(req.params.id)
-    //     .populate("stages")
-    //     .exec((err, foundArtist) => {
-    //         if (err) return res.send(err);
+    /* db.Artist
+    .findById(req.params.id)
+    .populate("stages")
+    .exec((err, foundArtist) => {
+        if(err) return res.send(err);
 
-    //         const context = { artists: foundArtist };
-    //         return res.render("artists/show", context)
-    //     })
+        const context = { artist: foundArtist };
+        return res.render("artists/show", context)
+    }) */
 });
-
 
 /* Create */
 
 router.post("/", (req, res) => {
     db.Stage.create(req.body, (err, createdStage) => {
         if (err) return res.send(err);
-        res.render("stages/show", context);
+        console.log(createdStage)
+        return res.redirect("/stages")
     });
 });
-
-
-
-
-
-
 
 /* Edit */
 
 router.get("/:id/edit", (req, res) => {
-    db.Stage.findById(req.params.id, (err, foundStage) => {
+    db.Artist.findById(req.params.id, (err, foundStage) => {
         if (err) return res.send(err);
 
         const context = { stages: foundStage };
         return res.render("stages/edit", context)
-    });
-});
+    })
+})
 
 /* Update */
 router.put("/:id", (req, res) => {
@@ -119,14 +111,6 @@ router.delete("/:id", (req, res) => {
         if (err) return res.send(err);
 
         return res.redirect("/stages")
-    });
-});
-
-router.delete(":/id", (req, res) => {
-    db.Stage.findByIdAndDelete(req.params.id, (err, deletedStage) => {
-        if (err) return res.send(err);
-
-        return res.redirect("/stage");
     });
 });
 

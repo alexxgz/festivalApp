@@ -26,7 +26,7 @@ router.get("/", (req, res) => {
         const context = {
             artists: allArtists,
         };
-
+        console.log(allArtists)
         res.render("artists/index", context)
     })
 })

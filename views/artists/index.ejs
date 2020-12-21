@@ -4,16 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <title>The Artist</title>
 </head>
 
-<body>
+<body class="artistIndex">
     <header>
-        <h1>Learn more about the artists </h1>
+        <h1>MEET THE ARTISTS</h1>
     </header>
+    <nav class="indexNav">
+        <a class="stagesLink" href="/stages">THE STAGES</a>
+        <a class="homeLink" href="/">HOME</a>
+        <a class="merchLink" href="??????????">MERCH</a>
+    </nav>
 
-    <section>
-        <p>
+    <section class="artistPlaying">
         <ul>
             <% artists.forEach(artist=> { %>
                 <a href="/artists/<%= artist._id %>">
@@ -23,13 +29,22 @@
                 </a>
                 <% }); %>
         </ul>
-        </p>
     </section>
 
-    <section>
-        <a href="artists/requests">See which Artists have been requested</a>
-        <a href="/artists/new">Request More Artist</a>
+    <section class="requestSection">
+        <a class="seeRequests" href="artists/requests">SEE WHICH ARTISTS HAVE BEEN REQUESTED</a>
+        <a class="requestMore" href="/artists/new">REQUEST MORE ARTISTS</a>
     </section>
+
+    <footer class="subscribeHome">
+        <p class="subscribeInfo">Stay up to date with the latest news about Fest.y</p>
+        <form action="????????" method='POST'>
+            <input class="inputEmail" type="email" name="email" placeholder="Enter Email" />
+            <input class="subscribeButton" type="submit" value="Subscribe">
+        </form>
+    </footer>
+
+
 </body>
 
 </html>

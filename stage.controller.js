@@ -1,9 +1,10 @@
-import Stage_model from "./product.model";
+import Stage_model from "./prsmageodel";
+import stage from "./stage.model";
 import vm from "v-response"
 
 exports.create_stage = (req, res, next) => {
     let stage_body = req.body;
-    const new_stage = new Stage_model(stage_body);
+    const new_stage = new stage(stage_body);
     new_stage.save()
         .then(saved => {
             if(!saved) {

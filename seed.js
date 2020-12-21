@@ -1,6 +1,6 @@
 import seeder from "mongoose-seed";
 
-const db = "mongodv://localhost:27017/seedtutorial";
+const db = "mongodb://localhost:27017/seedtutorial";
 
 seeder.connect(db, () => {
     seeder.loadModels([

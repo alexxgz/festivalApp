@@ -33,6 +33,19 @@ router.get("/", (req,res) => {
   
   });
 
+/* New */
+
+router.get("/new", (req,res) => {
+    db.Stage.find({}, (err,foundStages) => {
+        if(err) return res.send(err);
+
+        const context = {
+            stages: foundStages
+        };
+        res.render("/stages/new", context)
+    })
+})
+
 /* Show */
 
 router.get("/:id", (req, res) => {
@@ -51,7 +64,52 @@ router.get("/:id", (req, res) => {
     }) */
 });
 
+/* Create */
 
+router.post("/", (req,res) => {
+    db.Stage.create(req.body, (err,createdStage) => {
+        if(err) return res.send(err);
+
+        return res.redirect("/stages")
+    });
+})
+
+/* Edit */
+
+router.get(":id/edit", (req,res) => {
+    db.Stage.findById(req.params.id, (err, foundStage) => {
+        if(err) return res.send(err);
+
+        const context = {stages: foundStage};
+        return res.render("stages/edit", context)
+    })
+})
+
+/* Update */
+router.put("/:id", (req, res) => {
+    db.Stage.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set: {
+                ...req.body,
+            },
+        },
+        { new: true },
+        (err, updatedStage) => {
+            if(err) return res.send(err);
+
+            return res.redirect(`/stages/${updatedStage._id}`);
+        }
+    );
+});
+
+router.delete(":/id", (req,res) => {
+    db.Stage.findByIdAndDelete(req.params.id, (err,deletedStage) => {
+        if(err) return res.send(err);
+
+        return res.redirect("/stage");
+    })
+})
 
 /* Export router  */
 module.exports = router;

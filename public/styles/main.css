@@ -41,8 +41,28 @@ nav {
     padding: 1%;
     margin: 1%;
 }
+a {
+    color: whitesmoke;
+}
+a:hover {
+    color: chartreuse;
+}
+div {
+    background-color: rgba(0, 0, 0, .7);
+}
+section {
+    background-color: rgba(0, 0, 0, .7);
+}
+article {
+    text-align: center;
+    background-color: rgba(0, 0, 0, .8);
+}
+footer {
+    background-color: rgba(0, 0, 0, .8);
+} 
 
-/* HOME PAGE ONLY */
+
+/* MAIN HOME PAGE  */
 .stagesLink {
    position: absolute;
    left: 2%;
@@ -118,34 +138,97 @@ nav {
 }
 
 /* ARTIST INDEX PAGE */
-
+.artistPlaying {
+    padding: 1%;
+    margin: 1%;
+}
+.requestSection {
+    display: flex;
+    justify-content: space-around;
+    margin: 2%;
+    padding: 2%;
+    font-size: large;
+}
 
 /* ARTIST SHOW PAGE */
 .artistShow {
     background-image: url('/images/stageThree.jpg');
 }
-
-
-/* UNIVERSAL */
-a {
+.artistShowNav {
+    display: flex;
+    justify-content: space-around;
+}
+.artistShowInfo {
     color: whitesmoke;
+    padding: 1%;
+    margin: 1%;
+    font-size: large;
 }
-a:hover {
-    color: chartreuse;
+.aritstEditDelete {
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
 }
-div {
-    background-color: rgba(0, 0, 0, .7);
+.deleteArtist:hover {
+    cursor: pointer;
+    background-color: red;
 }
-section {
-    background-color: rgba(0, 0, 0, .7);
+
+/* ARTIST EDIT PAGE */
+.artistEdit {
+    background-image: url('/images/stageThree.jpg');
 }
-article {
-    text-align: center;
-    background-color: rgba(0, 0, 0, .8);
+.editNav {
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
 }
-li {
-    background-color: rgba(0, 0, 0, .7);
+.artistEditSection {
+    color: whitesmoke;
+    padding: 2%;
+    font-size: x-large;
 }
-footer {
-    background-color: rgba(0, 0, 0, .8);
-} 
+.artistEditForm {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.editUpdateButton:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+}
+
+/* ARTISTS REQUESTS PAGE */
+.requestsNav {
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
+}
+.requestedArtist {
+    padding: 1%;
+    margin: 5%;
+}
+
+/* ARTIST NEW PAGE */
+.artistNewNav {
+    display: flex; 
+    justify-content: space-around;
+    padding: 1%;
+}
+.artistNewSection {
+    color: whitesmoke;
+    padding: 2%;
+    margin: 1%;
+    font-size: x-large;
+}
+.artistNewForm {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1%;
+    padding: 4%;
+}
+
+.artistSubmit:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+}

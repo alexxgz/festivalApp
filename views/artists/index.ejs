@@ -13,12 +13,13 @@
     <header>
         <h1>MEET THE ARTISTS</h1>
     </header>
-    <nav>
-        <a href="/">Home</a>
+    <nav class="indexNav">
+        <a class="stagesLink" href="/stages">Find a Stage</a>
+        <a class="homeLink" href="/">Home</a>
+        <a class="merchLink" href="??????????">Merch</a>
     </nav>
 
-    <section>
-        <p>
+    <section class="artistPlaying">
         <ul>
             <% artists.forEach(artist=> { %>
                 <a href="/artists/<%= artist._id %>">
@@ -28,13 +29,22 @@
                 </a>
                 <% }); %>
         </ul>
-        </p>
     </section>
 
-    <footer>
-        <a href="artists/requests">See which Artists have been requested</a>
-        <a href="/artists/new">Request More Artist</a>
+    <section class="requestSection">
+        <a class="seeRequests" href="artists/requests">See which Artists have been requested</a>
+        <a class="requestMore" href="/artists/new">Request More Artist</a>
+    </section>
+
+    <footer class="subscribeHome">
+        <p class="subscribeInfo">Stay up to date with the latest news about Fest.y</p>
+        <form action="????????" method='POST'>
+            <input class="inputEmail" type="email" name="email" placeholder="Enter Email" />
+            <input class="subscribeButton" type="submit" value="Subscribe">
+        </form>
     </footer>
+
+
 </body>
 
 </html>

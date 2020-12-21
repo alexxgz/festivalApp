@@ -13,34 +13,34 @@
         <h1> Meet the Artist </h1>
     </header>
 
-    <nav>
+    <nav class="artistShowNav">
         <a href="/">Home</a>
         <a href="/artists">Back to all Artists</a>
     </nav>
 
 
-    <section>
+    <section class="artistShowInfo">
         <h2>
-            Name: <%= artists.djName %>
+            NAME: <%= artists.djName %>
         </h2>
 
         <h4>
-            Genre: <%=artists.genre%>
+            GENRE: <%=artists.genre%>
         </h4>
 
         <h4>
-            Top hits: <%= artists.topHits %>
+            TOP HITS: <%= artists.topHits %>
         </h4>
 
         <h4>
-            Playing at:
+            PLAYING AT:
             <%= artists.stage %>
         </h4>
     </section>
-    <section>
-        <a href="/artists/<%= artists._id %>/edit">Edit Artists</a>
+    <section class="aritstEditDelete">
+        <a href="/artists/<%= artists._id %>/edit">Edit Artist</a>
         <form action="/artists/<%= artists._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete" />
+            <input class="deleteArtist" type="submit" value="Delete" />
         </form>
     </section>
 

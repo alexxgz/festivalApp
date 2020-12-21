@@ -9,30 +9,35 @@
 </head>
 
 <body>
-    <nav>
+    <header>
+        <h1>REQUEST AN ARTIST</h1>
+    </header>
+    <nav class="artistNewNav">
         <a href="/">Home</a>
         <a href="/artists">Back to all Artists</a>
         <a href="/artists/requests">Requested Artist</a>
     </nav>
-    <header>
-        <h1>Request an Arist</h1>
-    </header>
 
-    <section>
-        <form action="/artists/" method="POST">
+    <section class="artistNewSection">
+        <form class="artistNewForm" action="/artists/" method="POST">
 
 
             Name: <input type="text" name="djName" placeholder="Excision" />
             Genre: <input type="text" name="genre" placeholder="dubstep" />
             Top Hits: <input type="text" name="topHits" placeholder="Top Hits" />
-            Stage: <input type="text" name="stage" placeholder="What stage are they playing on?" />
 
-            <input type="submit" value="Request new Arist">
+            <input class="artistSubmit" type="submit" value="Request new Arist">
 
         </form>
     </section>
 
-
+    <footer class="subscribeHome">
+        <p class="subscribeInfo">Stay up to date with the latest news about Fest.y</p>
+        <form action="????????" method='POST'>
+            <input class="inputEmail" type="email" name="email" placeholder="Enter Email" />
+            <input class="subscribeButton" type="submit" value="Subscribe">
+        </form>
+    </footer>
 
 
 

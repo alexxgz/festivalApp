@@ -17,7 +17,7 @@ body {
     background-size: cover;
 
    
-    background-color: rgb(210, 203, 16);
+    background-color: rgb(0, 0, 0);
 
     background-image:url('/images/edc.jpg');
 
@@ -81,6 +81,9 @@ footer {
 }
 .homePictures {
     background-color: rgba(0, 0, 0, .7);
+    display: flex;
+    justify-content: space-evenly;
+    
 }
 .homeTourDates {
     color: whitesmoke;
@@ -98,7 +101,8 @@ footer {
     font-size: medium;
 }
 .buyButtons:hover {
-    background-color: rgba(255, 255, 255, .7);
+    color: whitesmoke;
+    background-color: rgba(4, 81, 140, .8);
     cursor: pointer;
 }
  .dayOne {
@@ -133,7 +137,7 @@ footer {
     font-size: large;
 }
 .subscribeButton:hover {
-    background-color: rgba(255, 255, 255, .7);
+    background-color: rgba(255, 0, 0, 0.7);
     cursor: pointer;
 }
 

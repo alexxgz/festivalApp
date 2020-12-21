@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <title>The Stages</title>
 </head>
 
@@ -14,8 +16,18 @@
         </h1>
     </header>
 
-    <section>
-        <p>
+    <nav class="stageIndexNav">
+        <a href="/">Home</a>
+        <a href="/stages/new">Add a Stage</a>
+        <a href="????????">MERCH</a>
+    </nav>
+
+    <section class="stagesIndexSection">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veniam incidunt hic. Optio nemo laudantium
+            asperiores expedita rem, autem assumenda deleniti quam minima ut dicta, alias vero ipsum a consequuntur?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptas, tenetur ad, quibusdam quis
+            optio quo ducimus vel nostrum autem, nam qui minus maiores. Molestiae accusantium maiores quibusdam adipisci
+            porro?</p>
         <ul>
             <% stages.forEach(stage=> { %>
                 <a href="/stages/<%= stages._id %>">
@@ -25,8 +37,17 @@
                 </a>
                 <% }); %>
         </ul>
-        </p>
+
     </section>
+
+    <footer class="subscribeHome">
+        <p class="subscribeInfo">Stay up to date with the latest news about Fest.y</p>
+        <form action="????????" method='POST'>
+            <input class="inputEmail" type="email" name="email" placeholder="Enter Email" />
+            <input class="subscribeButton" type="submit" value="Subscribe">
+        </form>
+    </footer>
+
 </body>
 
 </html>

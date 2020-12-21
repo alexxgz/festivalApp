@@ -4,44 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
     <title>About the Artist</title>
 </head>
 
-<body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/artists">Back to all Artists</a>
-    </nav>
-
+<body class="artistShow">
     <header>
         <h1> Meet the Artist </h1>
     </header>
 
-    <section>
+    <nav class="artistShowNav">
+        <a href="/">HOME</a>
+        <a href="/artists">ALL ARTISTS</a>
+    </nav>
+
+
+    <section class="artistShowInfo">
         <h2>
-            Name: <%= artists.djName %>
+            NAME: <%= artists.djName %>
         </h2>
 
         <h4>
-            Genre: <%=artists.genre%>
+            GENRE: <%=artists.genre%>
         </h4>
 
         <h4>
-            Top hits: <%= artists.topHits %>
+            TOP HITS: <%= artists.topHits %>
         </h4>
 
         <h4>
-            Playing at:
+            PLAYING AT:
             <%= artists.stage %>
         </h4>
     </section>
-    <section>
-        <a href="/artists/<%= artists._id %>/edit">Edit Artists</a>
+    <section class="aritstEditDelete">
+        <a href="/artists/<%= artists._id %>/edit">Edit Artist</a>
         <form action="/artists/<%= artists._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete" />
-          </form>
+            <input class="deleteArtist" type="submit" value="Delete" />
+        </form>
     </section>
-
 
 </body>
 

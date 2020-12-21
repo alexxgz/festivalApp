@@ -48,15 +48,63 @@ router.get("/new", (req, res) => {
 
 /* Show */
 
-router.get("/", (req, res) => {
-    db.Stage
-        .findById(req.param.id)
-        .populate("artists")
-        .exec((err, foundStage) => {
+router.get("/:id", (req, res) => {
+    db.Stage.findById(req.params.id, (err, foundStage) => {
+        if (err) return res.send(err);
+        const context = { stages: foundStage };
+        res.render("stages/show", context);
+    });
+});
+
+
+
+/* Create */
+
+router.post("/", (req, res) => {
+    db.Stage.create(req.body, (err, createdStage) => {
+        if (err) return res.send(err);
+
+        return res.redirect("/stages")
+    });
+});
+
+/* Edit */
+
+router.get("/:id/edit", (req, res) => {
+    db.Stage.findById(req.params.id, (err, foundStage) => {
+        if (err) return res.send(err);
+
+        const context = { stages: foundStage };
+        return res.render("stages/edit", context)
+    })
+})
+
+/* Update */
+router.put("/:id", (req, res) => {
+    db.Stage.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set: {
+                ...req.body,
+            },
+        },
+        { new: true },
+        function (err, updatedStage) {
             if (err) return res.send(err);
-            const context = { stage: foundStage };
-            res.render("stages/show", context);
-        })
+
+            return res.redirect(`/stages/${updatedStage._id}`);
+        }
+    );
+});
+
+/* Delete */
+
+router.delete("/:id", (req, res) => {
+    db.Stage.findByIdAndDelete(req.params.id, (err, deletedStage) => {
+        if (err) return res.send(err);
+
+        return res.redirect("/stages")
+    });
 });
 
 

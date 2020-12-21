@@ -10,24 +10,39 @@
 
 <body>
     <header>
-        <h1>Welcome to <%= stages.name %>
+        <h1>
+            Welcome to <%= stages.stageName %>
         </h1>
-        <h2>
-
-            <% if (stage.name==="Cosmic Gardens" ) { %>
-                Converge at COSMIC GARDENS with your fellow Headliners and kick off the festivals Opening Ceremony
-                here.
-                Then immerse yourself in the sounds and lights. Three days of larger-than-life performances by the
-                top
-                names in electronic music.
-
-                <% } else if { %>
-                    Currently working on a Stage
-                    <%} %>
-        </h2>
     </header>
 
+    <nav>
+        <a href="/">HOME</a>
+        <a href="/stages">ALL STAGES</a>
+    </nav>
 
+    <section class="stageShowInfo">
+        <h2>
+            ABOUT THE STAGE
+        </h2>
+        </br>
+        <h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil necessitatibus dolorem facilis libero
+            deserunt cumque qui nemo numquam voluptatibus ea harum, optio distinctio quae dignissimos soluta facere in
+            autem quasi?
+            Similique doloremque unde atque a nostrum, quae repellendus nam id accusantium animi iure eos odio
+            consequuntur corporis laudantium vel assumenda sint! Enim assumenda maiores recusandae laudantium nulla sed
+            esse aut?
+            Officia expedita obcaecati culpa atque provident iure velit magni, vitae dolorem perferendis assumenda,
+            dolores eligendi modi voluptatum! Voluptas officiis similique deserunt quod totam cupiditate impedit
+            voluptatibus ipsum! Possimus, dolor quaerat?
+        </h3>
+    </section>
+    <section class="stagesEditDelete">
+        <a href="/stages/<%= stages._id %>/edit">EDIT STAGE</a>
+        <form action="/stages/<%= stages._id %>?_method=DELETE" method="POST">
+            <input class="deleteStage" type="submit" value="Delete" />
+        </form>
+    </section>
 </body>
 
 </html>

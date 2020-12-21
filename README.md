@@ -8,7 +8,7 @@ The intent of fest.y is to have a clean and simple website with the ability to a
 
 
 ## ERD
-![ERD](/.Project-Info/ERD.drawio)
+![ERD](./Project-Info/ERD.drawio)
 
 Here is an ERD of both our imagined MVP, as well as future icebox goals. 
 

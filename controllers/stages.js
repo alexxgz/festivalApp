@@ -70,7 +70,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
     db.Stage.create(req.body, (err, createdStage) => {
         if (err) return res.send(err);
-
+        console.log(createdStage)
         return res.redirect("/stages")
     });
 });

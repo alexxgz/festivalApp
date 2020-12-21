@@ -273,4 +273,32 @@ footer {
     background-color: cadetblue;
 }
 
+/* STAGES SHOW PAGE */
+.stagesShowBody {
+    background-image: url('/images/kineticGarden.jpg');
+}
+.stagesShowNav {
+    display: flex;
+    justify-content: space-evenly;
+}
+.stageShowInfo {
+    color: whitesmoke;
+    text-align: center;
+    padding: 1%;
+    margin: 1%;
+}
+.artistsPlaying {
+    color: whitesmoke;
+    padding: 1%;
+}
+.artistsPlayingHThree {
+    text-align: center;
+}
+.stagesEditDelete {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1%;
+    margin: 1%;
+}
+
 /* MERCH INDEXT PAGE */

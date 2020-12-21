@@ -30,12 +30,21 @@
             porro?</p>
         <ul>
             <% stages.forEach(stage=> { %>
+<<<<<<< HEAD
                 <a href="/stages/<%= stages._id %>">
                     <li>
                         <%= stages.name %>
                     </li>
                 </a>
                 <% }); %>
+=======
+                <li>
+                    <a href="/stages/<%= stage._id %>">
+                        <%= stage.stageName %>
+                    </a>
+                </li>
+                <% }) %>
+>>>>>>> Alexx
         </ul>
 
     </section>

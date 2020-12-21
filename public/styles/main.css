@@ -228,8 +228,8 @@ footer {
 .artistNewForm {
     display: flex;
     justify-content: space-evenly;
-    margin: 1%;
-    padding: 4%;
+    margin: 2%;
+    padding: 2%;
 }
 
 .artistSubmit:hover {

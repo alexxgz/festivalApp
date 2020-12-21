@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
     <title>Edit Artist</title>
 </head>
 
-<body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/artists">Artists</a>
-        <a href="/aritsts/requests">Requested Artists</a>
+<body class="artistEdit">
+    <nav class="editNav">
+        <a href="/">HOME</a>
+        <a href="/artists">ARTISTS</a>
+        <a href="/artists/requests">REQUESTED ARTISTS</a>
     </nav>
     <header>
         <h1>
@@ -19,16 +21,18 @@
         </h1>
     </header>
 
-    <section>
-        <form action="/artists/<%= artists._id %>?_method=PUT" method="POST">
+    <section class="artistEditSection">
+        <form class="artistEditForm" action="/artists/<%= artists._id %>?_method=PUT" method="POST">
 
-            Name: <input type="text" name="djName" placeholder="<%= artists.djName %> ">
-            </br>
-            Genre: <input type="text" name="genre" placeholder="<%= artists.genre %> ">
-            </br>
-            Top Hits: <input type="text" name="topHits" placeholder="<%= artists.topHits %> ">
+            NAME: <input class="editName" type="text" name="djName" placeholder="<%= artists.djName %> ">
 
-            <input type="submit" value="Update <%= artists.djName %>">
+            GENRE: <input class="editGenre" type="text" name="genre" placeholder="<%= artists.genre %> ">
+
+            TOP HITS: <input class="editTopHits" type="text" name="topHits" placeholder="<%= artists.topHits %> ">
+
+            PLAYING AT : <input class="editStage" type="text" name="stage" placeholder="<%= artists.stage %> ">
+
+            <input class="editUpdateButton" type="submit" value="Update <%= artists.djName %>">
         </form>
     </section>
 </body>

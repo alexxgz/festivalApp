@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const artistSchema = new mongoose.Schema(
     {
-        djName: { type: String, required: true, unique: true },
-        genre: { type: String, required: true },
-        topHits: { type: String, required: true },
+        djName: { type: String, required: false, unique: true },
+        genre: { type: String, required: false },
+        topHits: { type: String, required: false },
         date: { type: Date },
         stages: { type: mongoose.Schema.Types.ObjectId, ref: "Stage" },
     },

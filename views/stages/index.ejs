@@ -16,13 +16,18 @@
         </h1>
     </header>
 
-    <nav>
+    <nav class="stageIndexNav">
         <a href="/">Home</a>
         <a href="/stages/new">Add a Stage</a>
+        <a href="????????">MERCH</a>
     </nav>
 
-    <section>
-        <p>
+    <section class="stagesIndexSection">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veniam incidunt hic. Optio nemo laudantium
+            asperiores expedita rem, autem assumenda deleniti quam minima ut dicta, alias vero ipsum a consequuntur?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptas, tenetur ad, quibusdam quis
+            optio quo ducimus vel nostrum autem, nam qui minus maiores. Molestiae accusantium maiores quibusdam adipisci
+            porro?</p>
         <ul>
             <% stages.forEach(stage=> { %>
                 <li>
@@ -32,8 +37,17 @@
                 </li>
                 <% }) %>
         </ul>
-        </p>
+
     </section>
+
+    <footer class="subscribeHome">
+        <p class="subscribeInfo">Stay up to date with the latest news about Fest.y</p>
+        <form action="????????" method='POST'>
+            <input class="inputEmail" type="email" name="email" placeholder="Enter Email" />
+            <input class="subscribeButton" type="submit" value="Subscribe">
+        </form>
+    </footer>
+
 </body>
 
 </html>

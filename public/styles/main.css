@@ -236,3 +236,39 @@ footer {
     background-color: cadetblue;
     cursor: pointer;
 }
+
+/* STAGES INDEX PAGE */
+.stageIndexNav {
+    display: flex; 
+    justify-content: space-around;
+    padding: 1%;
+    margin: 1%;
+}
+.stagesIndexSection {
+    color: whitesmoke;
+    font-size: large;
+    padding: 5%;
+    margin: 1%;
+}
+
+/* STAGES NEW PAGE */
+.stagesNewNav {
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
+}
+.stagesNewSection {
+    color: whitesmoke;
+    font-size: large;
+    padding: 5%;
+    margin: 1%;
+}
+.stageNewForm {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: x-large;
+}
+.stageSubmit:hover {
+    cursor: pointer;
+    background-color: cadetblue;
+}

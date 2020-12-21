@@ -6,8 +6,7 @@ const artistSchema = new mongoose.Schema(
         genre: { type: String, required: true },
         topHits: { type: String, required: true },
         date: { type: Date },
-        stage: { type: String },
-
+        stages: { type: mongoose.Schema.Types.ObjectId, ref: "Stage" },
     },
     { timestamps: true }
 );

@@ -1,5 +1,6 @@
 /* Require express */
 const express = require("express");
+const { stages } = require(".");
 
 /* Set up router */
 const router = express.Router();
@@ -19,47 +20,96 @@ const db = require("../models")
 
 /* Index */
 
-
-router.get("/", (req, res) => {
-    db.Stage.find({}, (err, allStages) => {
-        if (err) return res.send(err);
-
-
-        const context = {
-            stages: allStages,
-        };
-
-        res.render("stages/index", context);
+router.get("/", (req,res) => {
+    db.Stage.find({}, (err, allStages) =>{
+  
+      if(err) return res.send(err);
+  
+      const context = {stages: allStages};
+      console.log(allStages)
+      return res.render("stages/index", context);
+  
     });
-});
+  
+  });
 
 /* New */
 
-router.get("/new", (req, res) => {
-    db.Stage.find({}, (err, foundStages) => {
-        if (err) return res.send(err);
-        const context = {
-            stages: foundStages,
-        };
-        res.render("stages/new", context);
-    });
-});
+router.get("/new", (req,res) => {
+    db.Stage.find({}, (err,foundStages) => {
+        if(err) return res.send(err);
 
+        const context = {
+            stages: foundStages
+        };
+        res.render("/stages/new", context)
+    })
+})
 
 /* Show */
 
-router.get("/", (req, res) => {
-    db.Stage
-        .findById(req.param.id)
-        .populate("artists")
-        .exec((err, foundStage) => {
-            if (err) return res.send(err);
-            const context = { stage: foundStage };
-            res.render("stages/show", context);
-        })
+router.get("/:id", (req, res) => {
+    const context = {stages: db.Stage};
+    res.render("stages/show", context);
+   
+    
+    /* db.Artist
+    .findById(req.params.id)
+    .populate("stages")
+    .exec((err, foundArtist) => {
+        if(err) return res.send(err);
+
+        const context = { artists: foundArtist };
+        return res.render("artists/show", context)
+    }) */
 });
 
+/* Create */
 
+router.post("/", (req,res) => {
+    db.Stage.create(req.body, (err,createdStage) => {
+        if(err) return res.send(err);
+
+        return res.redirect("/stages")
+    });
+})
+
+/* Edit */
+
+router.get(":id/edit", (req,res) => {
+    db.Stage.findById(req.params.id, (err, foundStage) => {
+        if(err) return res.send(err);
+
+        const context = {stages: foundStage};
+        return res.render("stages/edit", context)
+    })
+})
+
+/* Update */
+router.put("/:id", (req, res) => {
+    db.Stage.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set: {
+                ...req.body,
+            },
+        },
+        { new: true },
+        (err, updatedStage) => {
+            if(err) return res.send(err);
+
+            return res.redirect(`/stages/${updatedStage._id}`);
+        }
+    );
+});
+
+router.delete(":/id", (req,res) => {
+    db.Stage.findByIdAndDelete(req.params.id, (err,deletedStage) => {
+        if(err) return res.send(err);
+
+        return res.redirect("/stage");
+    })
+})
 
 /* Export router  */
 module.exports = router;

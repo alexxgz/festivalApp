@@ -102,10 +102,17 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     db.Artist.create(req.body, (err, createdArtist) => {
-        if (err) return res.send(err);
+        if(err) return res.send(err);
 
-        return res.redirect("/artists")
-    });
+        db.Stage.findById(createdArtist.stagesPlaying).exec((err, foundStage) => {
+            if(err) return res.send(err);
+
+            foundStage.artistsPlaying.push(createdArtist);
+            foundStage.save();
+
+            return res.redirect("/artists")
+        })
+    })
 });
 
 /* Edit */
@@ -143,7 +150,12 @@ router.delete("/:id", (req, res) => {
     db.Artist.findByIdAndDelete(req.params.id, (err, deletedArtist) => {
         if (err) return res.send(err);
 
-        return res.redirect("/artists")
+        db.Stage.findById(deletedArtist.stagesPlaying, (err, foundStage) => {
+            foundStage.artistsPlaying.remove(deletedArtist);
+            foundStage.save();
+
+            return res.redirect("/artists")
+        })
     });
 });
 

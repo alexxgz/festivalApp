@@ -47,22 +47,22 @@ router.get("/new", (req, res) => {
 /* Show */
 
 router.get("/:id", (req, res) => {
-    db.Stage.findById(req.params.id, (err, foundStage) => {
+    /* db.Stage.findById(req.params.id, (err, foundStage) => {
         if (err) return res.send(err);
         const context = { stages: foundStage };
         res.render("stages/show", context);
-    });
+    }); */
 
 
-    /* db.Artist
+    db.Stage
     .findById(req.params.id)
-    .populate("stages")
-    .exec((err, foundArtist) => {
+    .populate("artistsPlaying")
+    .exec((err, foundStage) => {
         if(err) return res.send(err);
 
-        const context = { artist: foundArtist };
-        return res.render("artists/show", context)
-    }) */
+        const context = { stages: foundStage };
+        return res.render("stages/show", context)
+    })
 });
 
 /* Create */

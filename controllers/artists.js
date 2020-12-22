@@ -65,7 +65,7 @@ router.get("/requests/:id", (req, res) => {
     });
 
 
-    /* db.Artist
+    db.Artist
     .findById(req.params.id)
     .populate("stages")
     .exec((err, foundArtist) => {
@@ -73,29 +73,29 @@ router.get("/requests/:id", (req, res) => {
 
         const context = { artist: foundArtist };
         return res.render("artists/show", context)
-    }) */
+    })
 });
 
 
 /* Show */
 
 router.get("/:id", (req, res) => {
-    db.Artist.findById(req.params.id, (err, foundArtist) => {
+    /* db.Artist.findById(req.params.id, (err, foundArtist) => {
         if (err) return res.send(err);
         const context = { artists: foundArtist };
         res.render("artists/show", context);
-    });
+    }); */
 
 
-    /* db.Artist
+    db.Artist
     .findById(req.params.id)
-    .populate("stages")
-    .exec((err, foundArtist) => {
+    .populate("stagesPlaying")
+    .exec((err, foundStage) => {
         if(err) return res.send(err);
 
-        const context = { artist: foundArtist };
+        const context = { stages: foundStage };
         return res.render("artists/show", context)
-    }) */
+    })
 });
 
 /* Create */

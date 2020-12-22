@@ -88,15 +88,18 @@ router.get("/:id", (req, res) => {
 
 
     db.Artist
-    .findById(req.params.id)
+    .findById(req.params.id, (err, foundArtist))
     .populate("stagesPlaying")
     .exec((err, foundStage) => {
         if(err) return res.send(err);
 
-        const context = { stages: foundStage };
+        const context = { 
+            stages: foundStage,
+            artists: foundArtist
+         };
         return res.render("artists/show", context)
     })
-});
+}); 
 
 /* Create */
 
@@ -151,6 +154,8 @@ router.delete("/:id", (req, res) => {
         if (err) return res.send(err);
 
         db.Stage.findById(deletedArtist.stagesPlaying, (err, foundStage) => {
+            if(err) return res.send(err);
+
             foundStage.artistsPlaying.remove(deletedArtist);
             foundStage.save();
 

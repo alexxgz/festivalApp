@@ -79,12 +79,27 @@ footer {
     color: whitesmoke;
     background-color: rgba(0, 0, 0, 0.8);
 }
-.homePictures {
+.wrapper {
+    overflow: hidden;
+  }
+  
+  .homePictures {
     background-color: rgba(0, 0, 0, .7);
     display: flex;
     justify-content: space-evenly;
-    
-}
+    height: 800px;
+    width: 4500px;
+    animation: slide 35s linear infinite;
+  }
+  
+  @keyframes slide{
+    0%{
+      transform: translate3d(0, 0, 0);
+    }
+    100%{
+      transform: translate3d(-2750px, 0, 0);
+    }
+  }
 .homeTourDates {
     color: whitesmoke;
     text-align: center;
@@ -97,12 +112,23 @@ footer {
     text-align: center;
     padding: 2%;
 }
-.buyButtons {
+.soldButtons {
     font-size: medium;
+    background-color: red;
 }
-.buyButtons:hover {
+.soldButtons:hover {
     color: whitesmoke;
-    background-color: rgba(4, 81, 140, .8);
+    background-color: rgba(126, 0, 0, 0.8);
+    cursor: not-allowed;
+}
+.buyButton {
+    font-size: medium;
+    background-color: rgb(5, 5, 75);
+    color: whitesmoke;
+}
+.buyButton:hover {
+    color: whitesmoke;
+    background-color: rgb(6, 109, 39);
     cursor: pointer;
 }
  .dayOne {
@@ -121,6 +147,10 @@ footer {
     margin: 2%;
     padding: 1%;
 }
+.dayFive {
+    margin: 2%;
+    padding: 1%;
+}
 .subscribeInfo {
     color: rgb(255, 0, 0);
     font-size: xx-large;
@@ -130,6 +160,10 @@ footer {
     text-align: center;
     padding: 10%;
 }
+.subscribeForm {
+    display: flex;
+    justify-content: space-evenly;
+} 
 .inputEmail {
     font-size: large;
 }
@@ -140,9 +174,18 @@ footer {
     background-color: rgba(255, 0, 0, 0.7);
     cursor: pointer;
 }
+.whichCountry {
+    color: whitesmoke;
+    font-size: large;
+}
+#country:hover {
+    cursor: pointer;
+}
+
 
 /* ARTIST INDEX PAGE */
 .artistPlaying {
+    color: whitesmoke;
     padding: 1%;
     margin: 1%;
 }
@@ -273,4 +316,63 @@ footer {
     background-color: cadetblue;
 }
 
+/* STAGES SHOW PAGE */
+.stagesShowBody {
+    background-image: url('/images/kineticGarden.jpg');
+}
+.stagesShowNav {
+    display: flex;
+    justify-content: space-evenly;
+}
+.stageShowInfo {
+    color: whitesmoke;
+    text-align: center;
+    padding: 1%;
+    margin: 1%;
+}
+.artistsPlaying {
+    color: whitesmoke;
+    padding: 1%;
+}
+.artistsPlayingHThree {
+    text-align: center;
+}
+.stagesEditDelete {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1%;
+    margin: 1%;
+}
+
+/* STAGES EDIT PAGE  */
+.stageEdit {
+    background-image: url('/images/kineticGarden.jpg');
+    color: whitesmoke;
+    
+}
+.stageEditNav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1%;
+}
+.stageEditForm {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2%;
+    padding: 4%;
+    font-size: large;
+}
+.stagesEditUpdateButton:hover {
+    cursor: pointer;
+    background-color: cadetblue;
+}
+
 /* MERCH INDEXT PAGE */
+.merchBody {
+    background-image: url('/images/ferrisWheel.jpeg');
+
+}
+.merchNav {
+    display: flex;
+    justify-content: space-around;
+}

@@ -47,6 +47,9 @@ app.use("/artists", controllers.artists);
 // stage controller
 app.use("/stages", controllers.stages);
 
+// merch controller
+app.use("/merch", controllers.merch);
+
 
 //404 error
 app.get(function (request, response) {

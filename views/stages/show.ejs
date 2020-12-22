@@ -8,14 +8,14 @@
     <title>The Stages</title>
 </head>
 
-<body>
+<body class="stagesShowBody">
     <header>
         <h1>
             Welcome to <%= stages.stageName %>
         </h1>
     </header>
 
-    <nav>
+    <nav class="stagesShowNav">
         <a href="/">HOME</a>
         <a href="/stages">ALL STAGES</a>
     </nav>
@@ -24,7 +24,7 @@
         <h2>
             ABOUT THE STAGE
         </h2>
-        </br>
+
         <h3>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil necessitatibus dolorem facilis libero
             deserunt cumque qui nemo numquam voluptatibus ea harum, optio distinctio quae dignissimos soluta facere in
@@ -37,6 +37,13 @@
             voluptatibus ipsum! Possimus, dolor quaerat?
         </h3>
     </section>
+
+    <section class="artistsPlaying">
+        <h3 class="artistsPlayingHThree">
+            ARTISTS PLAYING AT THIS STAGE:
+        </h3>
+    </section>
+
     <section class="stagesEditDelete">
         <a href="/stages/<%= stages._id %>/edit">EDIT STAGE</a>
         <form action="/stages/<%= stages._id %>?_method=DELETE" method="POST">

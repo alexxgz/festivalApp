@@ -8,13 +8,14 @@ mongoose.connect(dbUrl, {
     useCreateIndex: true,
     useFindAndModify: false
 })
-.then(function() {
-    console.log("Mongodb connected");
-})
-.catch(function(err) {
-    console.log("Mongodb error");
-    console.log(err);
-})
+    .then(function () {
+        console.log("mongodb connected");
+    })
+
+    .catch(function (err) {
+        console.log("mongodb error");
+        console.log(err);
+    });
 
 mongoose.connection.on("disconnected", function () {
     console.log("mongodb disconnected");
@@ -24,4 +25,5 @@ mongoose.connection.on("disconnected", function () {
 module.exports = {
     Stage: require("./Stage"),
     Artist: require("./Artist"),
+    Merch: require("./Merch")
 };

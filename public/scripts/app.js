@@ -1,7 +1,10 @@
 // app.use(express.static("public"));
-console.log("It's working")
+console.log("IT'S ALIVE")
 
-$(".buyButtons").on("click", function () {
-    console.log("Im clicking")
+$(".soldButtons").on("click", function () {
+    console.log("I'M SOLD OUT ALREADY")
+});
+$(".buyButton").on("click", function () {
+    console.log("TAKING YOU TO BUY TICKETS")
 });
 

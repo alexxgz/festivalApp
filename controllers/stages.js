@@ -91,8 +91,8 @@ router.get("/:id/edit", (req, res) => {
 
         const context = { stages: foundStage };
         return res.render("stages/edit", context)
-    })
-})
+    });
+});
 
 /* Update */
 router.put("/:id", (req, res) => {

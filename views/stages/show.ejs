@@ -39,9 +39,20 @@
     </section>
 
     <section class="artistsPlaying">
-        <h3 class="artistsPlayingHThree">
-            ARTISTS PLAYING AT THIS STAGE:
-        </h3>
+        <h3>List of Artists playing at this stage: </h3>
+
+        <ul>
+            <ul>
+                <% stages.artists.forEach(artist=> { %>
+                    <li>
+                        <a href="/artists/<%= artist._id %>">
+                            <%= artist.djName %>
+                        </a>
+                    </li>
+                    <% }) %>
+            </ul>
+
+        </ul>
     </section>
 
     <section class="stagesEditDelete">

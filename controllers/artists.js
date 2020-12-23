@@ -163,6 +163,7 @@ router.delete("/:id", (req, res) => {
             return res.redirect("/artists")
         });
     });
+
 });
 
 /* Export router  */

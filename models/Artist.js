@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 
-const artistSchema = new mongoose.Schema(
+const artistSchema = mongoose.Schema(
     {
-        djName: { type: String, required: false, unique: true },
-        genre: { type: String, required: false },
-        topHits: { type: String, required: false },
-        stagesPlaying: { type: mongoose.Schema.Types.ObjectId, ref: "Stage" },
+        djName: { type: String, required: true, unique: true },
+        genre: { type: String, required: true },
+        topHits: { type: String, required: true },
+        stage: { type: mongoose.Schema.Types.ObjectId, ref: "Stage" },
+
     },
     { timestamps: true }
 );

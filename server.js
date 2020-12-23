@@ -50,6 +50,9 @@ app.use("/stages", controllers.stages);
 // merch controller
 app.use("/merch", controllers.merch);
 
+// ticket controller
+app.use("/tickets", controllers.tickets);
+
 
 //404 error
 app.get(function (request, response) {

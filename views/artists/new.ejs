@@ -26,22 +26,26 @@
             Name: <input type="text" name="djName" placeholder="EXCISION" />
             Genre: <input type="text" name="genre" placeholder="DUBSTEP" />
             Top Hits: <input type="text" name="topHits" placeholder="TOP HITS" />
+<<<<<<< HEAD
             PLAYING AT: <input type="text" name="stagesPlaying" placeholder="STAGE">
+=======
+            <!-- PLAYING AT: <input type="text" name="stage" placeholder="STAGE"> -->
+
+            <select name='stage'>
+                <option default>Select which stage they will be playing on</option>
+
+                <% stages.forEach ( stage=> { %>
+                    <option value="<%= stage._id %>">
+                        <%= stage.stageName %>
+                    </option>
+                    <% }) %>
+            </select>
+>>>>>>> fdb8eee565e26434ce5886d55f12d87f0438bffd
 
             <input class="artistSubmit" type="submit" value="Request new Arist">
 
         </form>
     </section>
-
-    <footer class="subscribeHome">
-        <p class="subscribeInfo">Stay up to date with the latest news about Fest.y</p>
-        <form action="????????" method='POST'>
-            <input class="inputEmail" type="email" name="email" placeholder="Enter Email" />
-            <input class="subscribeButton" type="submit" value="Subscribe">
-        </form>
-    </footer>
-
-
 
 </body>
 

@@ -63,13 +63,10 @@ footer {
 
 
 /* MAIN HOME PAGE  */
-.stagesLink {
-   position: absolute;
-   left: 2%;
-}
-.merchLink {
-   position: absolute;
-   right: 6%;
+.homeNav {
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
 }
 .homeBio {
     text-align: center;
@@ -184,6 +181,10 @@ footer {
 
 
 /* ARTIST INDEX PAGE */
+.indexNav {
+    display: flex;
+    justify-content: space-around;
+}
 .artistPlaying {
     color: whitesmoke;
     padding: 1%;

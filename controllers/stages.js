@@ -36,32 +36,44 @@ router.get("/", (req, res) => {
 /* New */
 
 router.get("/new", (req, res) => {
+
     db.Stage.find({}, (err, foundStages) => {
         if (err) return res.send(err);
         const context = {
             stages: foundStages,
         };
         res.render("stages/new", context);
-    });
+    })
 });
 
 
 /* Show */
 
-router.get("/:id", (req, res) => {
-    db.Stage.findById(req.params.id, (err, foundStage) => {
-        if (err) return res.send(err);
-        const context = { stages: foundStage };
-        res.render("stages/show", context);
-    });
+router.get("/:id", function (req, res) {
+    // db.Stage.findById(req.params.id, (err, foundStage) => {
+    //     if (err) return res.send(err);
+    //     const context = { stages: foundStage };
+    //     res.render("stages/show", context);
+
+    db.Stage
+        .findById(req.params.id)
+        .populate("artists")
+        .exec(function (err, foundStage) {
+            if (err) return res.send(err);
+
+            const context = { stages: foundStage };
+            return res.render("stages/show", context);
+
+
+        })
 });
 
 
 
 /* Create */
 
-router.post("/", (req, res) => {
-    db.Stage.create(req.body, (err, createdStage) => {
+router.post("/", function (req, res) {
+    db.Stage.create(req.body, function (err, createdStage) {
         if (err) return res.send(err);
 
         return res.redirect("/stages")
@@ -70,23 +82,23 @@ router.post("/", (req, res) => {
 
 /* Edit */
 
-router.get("/:id/edit", (req, res) => {
-    db.Stage.findById(req.params.id, (err, foundStage) => {
+router.get("/:id/edit", function (req, res) {
+    db.Stage.findById(req.params.id, function (err, foundStage) {
         if (err) return res.send(err);
 
         const context = { stages: foundStage };
-        return res.render("stages/edit", context)
-    })
-})
+        return res.render("stages/edit", context);
+    });
+});
 
 /* Update */
-router.put("/:id", (req, res) => {
+router.put("/:id", function (req, res) {
     db.Stage.findByIdAndUpdate(
         req.params.id,
         {
             $set: {
                 ...req.body,
-            },
+            }
         },
         { new: true },
         function (err, updatedStage) {
@@ -99,11 +111,16 @@ router.put("/:id", (req, res) => {
 
 /* Delete */
 
-router.delete("/:id", (req, res) => {
-    db.Stage.findByIdAndDelete(req.params.id, (err, deletedStage) => {
+router.delete("/:id", function (req, res) {
+    db.Stage.findByIdAndDelete(req.params.id, function (err, deletedStage) {
         if (err) return res.send(err);
 
-        return res.redirect("/stages")
+        db.Artist.remove({ stages: deletedStage._id }, function (err, deletedArtists) {
+            if (err) return res.send(err);
+            return res.redirect("/stages")
+        });
+
+
     });
 });
 

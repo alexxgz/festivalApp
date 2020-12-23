@@ -1,6 +1,7 @@
 //External Modules
 const express = require("express");
 const methodOverride = require("method-override");
+const path = require("path");
 
 //Internal Modules
 const controllers = require("./controllers");
@@ -11,6 +12,7 @@ const app = express();
 //Configuration
 const PORT = 4000;
 app.set("view engine", "ejs");
+
 
 //Logger for terminal
 app.use(function (request, resonse, next) {
@@ -44,6 +46,12 @@ app.use("/artists", controllers.artists);
 
 // stage controller
 app.use("/stages", controllers.stages);
+
+// merch controller
+app.use("/merch", controllers.merch);
+
+// ticket controller
+app.use("/tickets", controllers.tickets);
 
 
 //404 error

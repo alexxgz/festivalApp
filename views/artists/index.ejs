@@ -4,17 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <title>The Artist</title>
 </head>
 
-<body>
+<body class="artistIndex">
     <header>
-        <h1>Learn more about the artists </h1>
+        <h1>MEET THE ARTISTS</h1>
     </header>
+    <nav class="indexNav">
+        <a class="indexHomeLink" href="/">HOME</a>
+        <a class="indexStagesLink" href="/stages">THE STAGES</a>
+        <a class="indexMerchLink" href="/merch">MERCH</a>
+    </nav>
 
-    <section>
-        <p>
-        <ul>
+    <section class="artistPlaying">
+        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum suscipit nesciunt deserunt officia alias.
+            Numquam molestiae illum adipisci odio aliquid amet sunt quo cupiditate officia, repellat iusto veritatis!
+            Aut, quisquam.Sequi illo nesciunt earum voluptatem! Voluptate, ipsa nam illum, animi quisquam omnis expedita
+            vel aliquid hic obcaecati, facilis totam? In, quidem? Animi saepe quia, sapiente omnis facere provident
+            necessitatibus molestias.</P>
+
+        <ul class="listOfArtists">
             <% artists.forEach(artist=> { %>
                 <a href="/artists/<%= artist._id %>">
                     <li>
@@ -23,13 +35,22 @@
                 </a>
                 <% }); %>
         </ul>
-        </p>
     </section>
 
-    <section>
-        <a href="artists/requests">See which Artists have been requested</a>
-        <a href="/artists/new">Request More Artist</a>
+    <section class="requestSection">
+        <a class="seeRequests" href="artists/requests">SEE WHICH ARTISTS HAVE BEEN REQUESTED</a>
+        <a class="requestMore" href="/artists/new">REQUEST MORE ARTISTS</a>
     </section>
+
+    <!-- <footer class="subscribeHome">
+        <p class="subscribeInfo">Stay up to date with the latest news about Fest.y</p>
+        <form action="????????" method='POST'>
+            <input class="inputEmail" type="email" name="email" placeholder="Enter Email" />
+            <input class="subscribeButton" type="submit" value="Subscribe">
+        </form>
+    </footer> -->
+
+
 </body>
 
 </html>

@@ -4,11 +4,13 @@
   "description": "Alex and Gabe's First Group Project",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": " node seed.js",
+    "start": "nodemon node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://git.generalassemb.ly/alexgz/projectOne.git"
+    "url": "https://git.generalassemb.ly/alexgz/virtualFestival.git"
   },
   "author": "Alex & Gabe",
   "license": "MIT",
@@ -16,6 +18,7 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
-    "mongoose": "^5.11.8"
+    "mongoose": "^5.11.8",
+    "mongoose-seed": "^0.6.0"
   }
 }

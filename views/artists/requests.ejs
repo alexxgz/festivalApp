@@ -4,20 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
     <title>Requested Artist</title>
 </head>
 
 <body>
-    <nav>
-        <a href="/artists">Back to All Artist</a>
-        <a href="/">Back Home</a>
-    </nav>
     <header>
         <h1>All Requested Artist</h1>
     </header>
+    <nav class=requestsNav>
+        <a href="/">HOME</a>
+        <a href="/artists">ALL ARTISTS</a>
+    </nav>
 
-    <section>
-        <p>
+    <section class=requestedArtist>
+
         <ul>
             <% artists.forEach(artist=> { %>
                 <a href="/artists/requests/<%= artist._id %>">
@@ -27,11 +29,18 @@
                 </a>
                 <% }); %>
         </ul>
-        </p>
 
     </section>
-    
 
+
+
+    <!-- <footer class="subscribeHome">
+        <p class="subscribeInfo">Stay up to date with the latest news about Fest.y</p>
+        <form action="????????" method='POST'>
+            <input class="inputEmail" type="email" name="email" placeholder="Enter Email" />
+            <input class="subscribeButton" type="submit" value="Subscribe">
+        </form>
+    </footer> -->
 </body>
 
 </html>

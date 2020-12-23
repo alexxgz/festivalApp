@@ -4,11 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
     <title>New Stage</title>
 </head>
 
 <body>
+    <header>
+        <h1>ADD NEW STAGE</h1>
+    </header>
+
+    <nav class="stagesNewNav">
+        <a href="/">HOME</a>
+        <a href="/stages">ALL STAGES</a>
+        <a href="/merch">MERCH</a>
+    </nav>
+
+    <section class="stagesNewSection">
+        <form class="stageNewForm" action="/stages/" method="POST">
+
+
+            STAGE NAME: <input type="text" name="stageName" placeholder="STAGE NAME" />
+
+            <input class="stageSubmit" type="submit" value="ADD NEW STAGE">
+
+        </form>
+    </section>
+
+
+
+
+
 
 </body>
+
 
 </html>

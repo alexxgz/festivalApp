@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
+    <title>EDIT STAGE</title>
+</head>
+
+<body class="stageEdit">
+    <header>
+        <h1>
+            Editing <%= stages.stageName %>
+        </h1>
+    </header>
+    <nav class="stageEditNav">
+        <a href="/">HOME</a>
+        <a href="/stages">STAGES</a>
+        <a href="/merch">MERCH</a>
+    </nav>
+
+    <section class="stageEditSection">
+        <form class="stageEditForm" action="/stages/<%= stages._id %>?_method=PUT" method="POST">
+
+            STAGE NAME: <input class="editName" type="text" name="stageName" placeholder="<%= stages.stageName %> ">
+
+            <input class="stagesEditUpdateButton" type="submit" value="Update <%= stages.stageName %>">
+        </form>
+    </section>
+</body>
+
+</html>

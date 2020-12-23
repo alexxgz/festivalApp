@@ -26,5 +26,6 @@ mongoose.connection.on("disconnected", function () {
 module.exports = {
     Stage: require("./Stage"),
     Artist: require("./Artist"),
-    Merch: require("./Merch")
+    Merch: require("./Merch"),
+    Ticket: require("./Ticket"),
 };

@@ -76,17 +76,17 @@ router.post("/", function (req, res) {
     db.Stage.create(req.body, function (err, createdStage) {
         if (err) return res.send(err);
 
-        db.Artist.findById(createdStage.artistsPlaying).exec((err, foundArtist) => {
+        /* db.Artist.findById(createdStage.artistsPlaying).exec((err, foundArtist) => {
             if (err) return res.send(err);
 
-            foundArtist.stagesPlaying.push(createdStage);
-            foundArtist.save();
+            foundArtist.stage.push(createdStage);
+            foundArtist.save();*/
 
             return res.redirect("/stages")
-        });
+        }); 
 
     });
-});
+/* }); */
 
 /* Edit */
 

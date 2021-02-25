@@ -19,19 +19,17 @@ const db = require("../models")
 
 /* Index */
 
-
 router.get("/", (req, res) => {
     db.Stage.find({}, (err, allStages) => {
         if (err) return res.send(err);
 
-
         const context = {
             stages: allStages,
         };
-
-        res.render("stages/index", context);
-    });
-});
+        console.log(allStages)
+        res.render("stages/index", context)
+    })
+})
 
 /* New */
 
@@ -39,8 +37,9 @@ router.get("/new", (req, res) => {
 
     db.Stage.find({}, (err, foundStages) => {
         if (err) return res.send(err);
+
         const context = {
-            stages: foundStages,
+            stages: foundStages
         };
         res.render("stages/new", context);
     })
@@ -70,15 +69,24 @@ router.get("/:id", function (req, res) {
 
 
 
+
 /* Create */
 
 router.post("/", function (req, res) {
     db.Stage.create(req.body, function (err, createdStage) {
         if (err) return res.send(err);
 
-        return res.redirect("/stages")
+        /* db.Artist.findById(createdStage.artistsPlaying).exec((err, foundArtist) => {
+            if (err) return res.send(err);
+
+            foundArtist.stage.push(createdStage);
+            foundArtist.save();*/
+
+            return res.redirect("/stages")
+        }); 
+
     });
-});
+/* }); */
 
 /* Edit */
 
@@ -123,8 +131,6 @@ router.delete("/:id", function (req, res) {
 
     });
 });
-
-
 
 /* Export router  */
 module.exports = router;

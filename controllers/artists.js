@@ -26,7 +26,7 @@ router.get("/", (req, res) => {
         const context = {
             artists: allArtists,
         };
-
+        console.log(allArtists)
         res.render("artists/index", context)
     })
 })
@@ -73,7 +73,6 @@ router.get("/requests/:id", function (req, res) {
     //         const context = { artists: foundArtist };
     //         res.render("artists/show", context);
     //     });
-
 
 });
 

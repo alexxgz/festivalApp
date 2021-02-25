@@ -4,6 +4,7 @@ const router = express.Router();
 
 const db = require("../models");
 
+/* Index */
 
 router.get("/", (req, res) => {
     db.Merch.find({}, (err, allMerch) => {

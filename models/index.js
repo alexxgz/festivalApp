@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const dbUrl = "mongodb://localhost:27017/festivals"
 
-
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
